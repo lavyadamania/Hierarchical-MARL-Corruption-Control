@@ -1,4 +1,4 @@
-# 🚔 CorruptionMARL: Evolutionary Multi-Agent Police System
+# 🚔 Multi-Agent Police Corruption Simulation
 
 > **"Where death is just a learning experience, and corruption is a survival strategy."**
 
