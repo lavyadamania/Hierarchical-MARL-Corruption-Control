@@ -15,8 +15,8 @@ to discuss licensing terms.
 ### Contact for Commercial Licensing:
 
 **📧 Email:** lavyadamania@gmail.com  
-**💼 LinkedIn:** [linkedin.com/in/lavya-damania](https://linkedin.com/in/lavya-damania)  
-**📸 Instagram:** [@lavyadamania](https://instagram.com/lavyadamania)  
+**💼 LinkedIn:** [Lavya Damania](https://www.linkedin.com/in/lavya-damania-6778472a7/)  
+**📸 Instagram:** [@lavya_damania_](https://www.instagram.com/lavya_damania_/)  
 **🐙 GitHub:** [@lavyadamania](https://github.com/lavyadamania)
 
 ---

@@ -301,7 +301,8 @@ See [LICENSE](LICENSE) for details.
 **Commercial License** - Required for business applications, SaaS products, or proprietary software.  
 See [LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md) for details.
 
-**📧 Contact:** lavyadamania@gmail.com | **💼** [LinkedIn](https://linkedin.com/in/lavya-damania) | **📸** [Instagram](https://instagram.com/lavyadamania)
+**📧 Email:** lavyadamania@gmail.com  
+**🔗 Connect:** [LinkedIn](https://www.linkedin.com/in/lavya-damania-6778472a7/) • [Instagram](https://www.instagram.com/lavya_damania_/) • [GitHub](https://github.com/lavyadamania)
 
 ---
 
@@ -313,8 +314,10 @@ This work explores novel applications of multi-agent reinforcement learning to i
 
 For questions, collaboration opportunities, or technical discussions:
 - **GitHub:** [@lavyadamania](https://github.com/lavyadamania)
-- **LinkedIn:** [Lavya Damania](https://linkedin.com/in/lavya-damania) (update with your profile)
-- **Project Issues:** [GitHub Issues](https://github.com/yourusername/CorruptionMARL/issues)
+- **LinkedIn:** [Lavya Damania](https://www.linkedin.com/in/lavya-damania-6778472a7/)
+- **Instagram:** [@lavya_damania_](https://www.instagram.com/lavya_damania_/)
+- **Email:** lavyadamania@gmail.com
+- **Project Issues:** [GitHub Issues](https://github.com/lavyadamania/Hierarchical-MARL-Corruption-Control/issues)
 
 ---
 
