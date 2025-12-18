@@ -299,7 +299,7 @@ See [LICENSE](LICENSE) for details.
 
 ### For Commercial Use:
 **Commercial License** - Required for business applications, SaaS products, or proprietary software.  
-See [LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md) for details.
+See [COMMERCIAL-LICENSE.md](COMMERCIAL-LICENSE.md) for details.
 
 **📧 Email:** lavyadamania@gmail.com  
 **🔗 Connect:** [LinkedIn](https://www.linkedin.com/in/lavya-damania-6778472a7/) • [Instagram](https://www.instagram.com/lavya_damania_/) • [GitHub](https://github.com/lavyadamania)
