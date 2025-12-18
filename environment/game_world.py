@@ -1,94 +1,133 @@
 import random
-from config import (
-    WITNESS_RISK_FACTOR, IA_RISK_MULTIPLIER, LOCATION_RISK_WEIGHT,
-    CRIME_TYPES, SEVERITY_RISK_MULTIPLIER, VIOLENCE_SCALAR,
-    ALERT_RISK_ADDITION
-)
+import config # CHANGED
 
-class GameWorld:
+class SimulationEnvironment:
     def __init__(self):
-        self.crime_names = list(CRIME_TYPES.keys())
+        self.crime_names = list(config.CRIME_TYPES.keys())
 
     def generate_scenario(self):
         """
-        Generates a detailed bribe scenario.
-        Includes Asset Value, Criminal Wealth, and Context-Aware Bribes.
+        Generates a rich 10-dim RPG scenario.
         """
-        # Pick a crime
         crime_name = random.choice(self.crime_names)
-        severity, base_val_min, base_val_max = CRIME_TYPES[crime_name]
+        severity, base_val_min, base_val_max = config.CRIME_TYPES[crime_name]
         
-        # 1. Asset/Context Value (What is at stake?)
-        # For Theft: Value of item. For Murder: Value of getting away (Life).
-        # We assume base_val in definition is now the "Stakes Value" not offer.
-        # Actually, let's derive distinct Asset Value.
-        
+        # 1. Asset Value
         asset_value = random.randint(base_val_min * 10, base_val_max * 10) 
-        # Example: Traffic (Base 500) -> Asset (Car/License) ~ 5000 to 20000
         
-        # 2. Criminal Profile
-        criminal_wealth = random.choice(['poor', 'middle', 'rich'])
-        wealth_factor = {'poor': 0.5, 'middle': 1.0, 'rich': 3.0}[criminal_wealth]
+        # 2. Criminal Profile & Weath
+        criminal_class = random.choice(['poor', 'middle', 'rich'])
+        # Wealth on 0-1000 scale
+        if criminal_class == 'poor': suspect_wealth_value = random.randint(10, 100)
+        elif criminal_class == 'middle': suspect_wealth_value = random.randint(100, 500)
+        else: suspect_wealth_value = random.randint(500, 1000)
         
-        # 3. Repeat Offender?
-        criminal_history = random.choice(['first_timer', 'repeat_offender'])
-        history_multiplier = 1.5 if criminal_history == 'repeat_offender' else 1.0
-        
-        # 4. Calculate Bribe Offer
-        # Bribe is typically 10-30% of the trouble's cost/asset value
-        bribe_percentage = random.uniform(0.1, 0.3)
-        
-        raw_offer = asset_value * bribe_percentage * wealth_factor * history_multiplier
+        # 3. Bribe Offer Logic (User Requested)
+        if severity <= 3:
+            raw_offer = 0.10 * asset_value
+        elif severity <= 7:
+            raw_offer = max(0.30 * asset_value, 0.30 * suspect_wealth_value)
+        else:
+            raw_offer = 0.50 * suspect_wealth_value
+
         final_offer = int(raw_offer)
         
+        # 4. RPG Features
         return {
             'crime_type': crime_name,
             'severity': severity,
             'offer': final_offer,
-            'asset_value': asset_value,
-            'criminal_wealth': criminal_wealth,
             'witnesses': random.randint(0, 4),
             'ia_nearby': random.choice([True, False]),
+            'alert_level': 0.0, 
+            'evidence_strength': random.uniform(0.1, 1.0),
+            'has_warrant': random.choice([True, False]) if severity > 5 else False,
+            'gang_affiliated': random.choice([True, False]),
+            'seized_value': random.randint(100, 1000) if random.random() < 0.3 else 0,
+            'suspect_aggression': random.uniform(0.1, 1.0) if severity > 6 else 0.1,
             'location_risk': random.random()
         }
 
     def resolve_outcome(self, decision, state):
         """
-        Determines the outcome of a cop's decision.
+        RPG Logic for 15 Actions.
+        Returns: String Outcome
         """
-        if decision == 'REJECT':
-            # Violence Check: Rejection can lead to death
-            # Severity 1 (Traffic) -> 3% chance
-            # Severity 10 (Murder) -> 30% chance
-            violence_prob = state['severity'] * VIOLENCE_SCALAR
+        risk = 0.0
+        
+        # --- HONEST ACTIONS ---
+        if decision == 'ARREST':
+            # Needs Evidence OR Warrant
+            if state['has_warrant'] or state['evidence_strength'] > 0.6:
+                return 'arrest_success'
+            return 'arrest_failed' if random.random() < 0.5 else 'arrest_success'
             
-            # Risk Multiplier for 'Rich/Desperate' criminals? 
-            # Implied in severity usually, but let's keep it simple based on severity.
+        if decision == 'INVESTIGATE':
+            return 'investigate_success' 
             
-            if random.random() < violence_prob:
-                return 'killed'
-            return 'rejected'
+        if decision == 'DE_ESCALATE':
+            if state['suspect_aggression'] > 0.8:
+                return 'severe_injury' if random.random() < 0.2 else 'de_escalate_failed'
+            return 'de_escalate_success'
+            
+        if decision == 'ISSUE_TICKET':
+            if state['severity'] > 3: return 'ticket_invalid' 
+            return 'ticket_success'
+            
+        if decision == 'REPORT_BRIBE':
+            if state['gang_affiliated'] and random.random() < 0.3:
+                return 'severe_injury' 
+            return 'report_success'
 
-        # Calculate detection probability
-        # Base Risk + Severity Risk
-        # High severity crimes attract more attention (Chief, Media, Public)
-        
-        severity_risk = state['severity'] * SEVERITY_RISK_MULTIPLIER
-        
-        # Global Alert Risk (Heat)
-        # If alert_level is 1.0, we add full ALERT_RISK_ADDITION
-        heat_risk = state.get('alert_level', 0.0) * ALERT_RISK_ADDITION
+        if decision == 'REQUEST_WARRANT':
+            return 'warrant_success'
+            
+        if decision == 'WHISTLEBLOW':
+            return 'severe_injury' if random.random() < 0.6 else 'whistleblow_success'
 
-        detection_probability = (state['witnesses'] * WITNESS_RISK_FACTOR) + \
-                                (IA_RISK_MULTIPLIER if state['ia_nearby'] else 0.0) + \
-                                (state['location_risk'] * LOCATION_RISK_WEIGHT) + \
-                                severity_risk + \
-                                heat_risk
-        
-        # Cap prob at 1.0 (Certainty of getting caught for very high risk)
-        detection_probability = min(1.0, detection_probability)
-        
-        if random.random() < detection_probability:
-            return 'caught'
-        else:
-            return 'success'
+        # --- CORRUPT ACTIONS ---
+        if decision == 'ACCEPT_BRIBE':
+            risk = (state['witnesses'] * config.WITNESS_RISK_FACTOR) + (0.5 if state['ia_nearby'] else 0)
+            return 'caught' if random.random() < risk else 'success'
+            
+        if decision == 'EXTORT':
+            risk = 0.3 + (0.5 if state['ia_nearby'] else 0)
+            return 'caught' if random.random() < risk else 'extortion_success'
+            
+        if decision == 'PLANT_EVIDENCE': # Frame
+            if state['witnesses'] > 0 or state['ia_nearby']:
+                return 'caught' 
+            return 'frame_success'
+            
+        if decision == 'TIP_OFF':
+            if not state['gang_affiliated']: return 'tip_off_useless'
+            return 'caught' if state['ia_nearby'] else 'tip_off_success'
+            
+        if decision == 'DESTROY_EVIDENCE':
+            if state['ia_nearby']: return 'caught'
+            return 'destroy_success'
+            
+        if decision == 'INTIMIDATE_WITNESS':
+            if state['witnesses'] == 0: return 'intimidate_useless'
+            return 'caught' if state['ia_nearby'] else 'intimidate_success'
+            
+        if decision == 'STEAL_SEIZED':
+            if state['seized_value'] == 0: return 'steal_useless'
+            risk = 0.1 if not state['ia_nearby'] else 0.9
+            return 'caught' if random.random() < risk else 'steal_success'
+            
+        if decision == 'EXCESSIVE_FORCE':
+            return 'caught' if (state['witnesses'] > 0 or state['ia_nearby']) else 'brutality_success'
+
+        if decision == 'ISOLATE_SUSPECT':
+            if state['witnesses'] == 0:
+                return 'isolate_useless' 
+            
+            # Application of the Maneuver
+            state['witnesses'] = 0 # The "Gully" Effect
+            state['suspect_aggression'] = min(1.0, state['suspect_aggression'] + 0.3) 
+            return 'isolate_success'        
+
+
+        # Default / Fallback
+        return 'investigate_success'

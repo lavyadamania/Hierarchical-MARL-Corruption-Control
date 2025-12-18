@@ -48,6 +48,7 @@ CREATE TABLE IF NOT EXISTS investigations (
     investigation_id INTEGER PRIMARY KEY,
     investigator_id INTEGER,
     target_cop_id INTEGER,
+    episode INTEGER,
     evidence_score REAL,
     status TEXT, -- 'open', 'active', 'closed'
     outcome TEXT, -- 'CONVICTED-FIRE', 'CONVICTED-SUSPEND', 'WARNING', 'INSUFFICIENT_EVIDENCE'

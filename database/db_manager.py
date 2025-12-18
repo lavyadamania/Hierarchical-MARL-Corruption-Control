@@ -45,3 +45,15 @@ class DBManager:
     def close(self):
         # SQLite connections in context managers close automatically, but explicit method provided if needed
         pass
+
+    def update_cop_status(self, cop_id, status):
+        """Updates the status of a cop (e.g. active, killed, fired)."""
+        self.execute_query("UPDATE cops SET status=? WHERE cop_id=?", (status, cop_id))
+
+    def log_transaction(self, episode, cop_id, crime_type, offer, decision, outcome):
+        """Logs a bribe transaction to history."""
+        # Note: crime_type is not currently stored in schema, but passed for potential future use
+        self.execute_query("""
+            INSERT INTO bribe_history (episode_number, cop_id, player_offer, decision, outcome)
+            VALUES (?, ?, ?, ?, ?)
+        """, (episode, cop_id, offer, decision, outcome))
