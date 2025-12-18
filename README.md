@@ -262,7 +262,7 @@ If you use this work in your research, please cite:
 @software{corruptionmarl2024,
   author = {Lavya Nikunj Damania},
   title = {CorruptionMARL: Hierarchical Multi-Agent Reinforcement Learning for Institutional Corruption Control},
-  year = {2024},
+  year = {2025},
   url = {https://github.com/lavyadamania/CorruptionMARL}
 }
 ```
@@ -309,4 +309,4 @@ For questions, collaboration opportunities, or technical discussions:
 
 ---
 
-**Status:** Active Development | **Version:** 1.0.0 | **Last Updated:** December 2024
+**Status:** Active Development | **Version:** 1.0.0 | **Last Updated:** December 2025
