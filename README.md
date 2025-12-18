@@ -301,7 +301,7 @@ See [LICENSE](LICENSE) for details.
 **Commercial License** - Required for business applications, SaaS products, or proprietary software.  
 See [LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md) for pricing and terms.
 
-**Contact:** lavyadamania+license@gmail.com for commercial inquiries.
+**Contact:** lavyadamania@gmail.com for commercial inquiries.
 
 ---
 

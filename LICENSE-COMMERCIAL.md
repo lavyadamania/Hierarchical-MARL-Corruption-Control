@@ -56,7 +56,7 @@ the CorruptionMARL software for commercial purposes.
 
 ## Contact for Purchase:
 
-**Email:** lavyadamania+license@gmail.com  
+**Email:** lavyadamania@gmail.com  
 **GitHub:** [@lavyadamania](https://github.com/lavyadamania)
 
 Include in your inquiry:
