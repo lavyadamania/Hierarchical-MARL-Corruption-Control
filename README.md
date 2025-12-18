@@ -44,7 +44,24 @@ While the results are robust within the simulation, several constraints define t
 
 ---
 
-## 4. System Architecture
+## 4. Project Significance & Advantages
+
+Beyond the theoretical results, this framework offers several distinct advantages as a research tool and engineering achievement:
+
+### 4.1. Novel Interdisciplinary Application
+This project bridges the gap between **Computational Social Science** and **Deep Reinforcement Learning**. While MARL is often applied to games (StarCraft, Dota) or robotics, CorruptionMARL demonstrates its power in modeling complex, high-stakes sociological phenomena, offering a new methodology for "in-silico" policy testing.
+
+### 4.2. Advanced Visualization Suite
+Unlike many "black box" RL research codes, this system features a **production-grade web dashboard** (Flask + Socket.IO). Researchers can watch the institutional dynamics unfold in real-time, inspect individual agent "brains," and dynamically adjust laws of physics on the fly to test robustness—making the abstract concrete.
+
+### 4.3. Robust Architecture
+- **Self-Healing:** The system is designed to handle agent death and replacement seamlessly, maintaining simulation continuity.
+- **Turbo Mode:** Optimized training pipeline capabilities allow for rapid hypothesis testing, simulating years of institutional time (thousands of episodes) in minutes.
+- **Configurability:** Almost every aspect of the environment (bribe multipliers, risk factors, economic incentives) is parametrically exposed, allowing for vast experimental flexibility without code changes.
+
+---
+
+## 5. System Architecture
 
 The simulation is built on a co-evolutionary stack where three distinct agent classes learn simultaneously:
 
@@ -67,7 +84,7 @@ graph TD
 - **Stack:** PyTorch 2.0 (Backend), Flask (Orchestration), Socket.IO (Real-time Streaming).
 - **Persistence:** SQLite for relational event logging; PyTorch state dictionaries for agent brains.
 
-## 5. Quick Start (Simulation/Training)
+## 6. Quick Start (Simulation/Training)
 
 ### Prerequisites
 - Python 3.8+
@@ -86,7 +103,7 @@ graph TD
 
 ---
 
-## 6. License & Contact
+## 7. License & Contact
 
 **Dual Licensing Model:**
 - **MIT License:** Free for academic, educational, and open-source use.
