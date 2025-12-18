@@ -1,8 +1,5 @@
-# CorruptionMARL: Hierarchical Multi-Agent Reinforcement Learning for Institutional Corruption Control
 
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 ## Abstract
 
@@ -294,7 +291,19 @@ CorruptionMARL_Complete/
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is available under **dual licensing**:
+
+### For Students, Researchers, and Open Source:
+**MIT License** - Use freely for educational, research, and non-commercial purposes.  
+See [LICENSE](LICENSE) for details.
+
+### For Commercial Use:
+**Commercial License** - Required for business applications, SaaS products, or proprietary software.  
+See [LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md) for pricing and terms.
+
+**Contact:** lavyadamania+license@gmail.com for commercial inquiries.
+
+---
 
 ## Acknowledgments
 

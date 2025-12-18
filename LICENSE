@@ -1,6 +1,12 @@
-MIT License
+# Dual License
 
 Copyright (c) 2025 Lavya Nikunj Damania
+
+This software is available under two license options:
+
+---
+
+## License Option 1: MIT License (Free for Open Source)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -9,8 +15,10 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+**Requirements for MIT License:**
+- The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+- Use must be for **non-commercial, educational, or research purposes**.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -19,3 +27,43 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+## License Option 2: Commercial License (Paid for Business Use)
+
+For commercial use, enterprise deployments, or proprietary applications, 
+a separate commercial license is required.
+
+**Commercial License includes:**
+- ✅ Use in commercial products and services
+- ✅ Proprietary modifications without attribution
+- ✅ Priority support and customization
+- ✅ No open-source distribution requirements
+
+**Contact for Commercial Licensing:**
+- Email: lavyadamania+license@gmail.com (update with your email)
+- GitHub: [@lavyadamania](https://github.com/lavyadamania)
+
+**Pricing:** Contact for quote based on use case.
+
+---
+
+## Quick Reference
+
+| Use Case | License Required |
+|----------|------------------|
+| Academic research | MIT (Free) |
+| Student projects | MIT (Free) |
+| Open source projects | MIT (Free) |
+| Personal learning | MIT (Free) |
+| **Commercial SaaS** | **Commercial (Paid)** |
+| **Enterprise deployment** | **Commercial (Paid)** |
+| **Proprietary products** | **Commercial (Paid)** |
+| **Consulting services** | **Commercial (Paid)** |
+
+---
+
+**Default:** If you're unsure, assume you need the commercial license for any business use.
+
+**Questions?** Contact: lavyadamania@gmail.com (update with your actual email)
