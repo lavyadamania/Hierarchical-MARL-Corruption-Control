@@ -1,12 +1,6 @@
-# Dual License
+MIT License
 
 Copyright (c) 2025 Lavya Nikunj Damania
-
-This software is available under two license options:
-
----
-
-## License Option 1: MIT License (Free for Open Source)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -15,10 +9,8 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 
-**Requirements for MIT License:**
-- The above copyright notice and this permission notice shall be included in all
-  copies or substantial portions of the Software.
-- Use must be for **non-commercial, educational, or research purposes**.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -30,40 +22,14 @@ SOFTWARE.
 
 ---
 
-## License Option 2: Commercial License (Paid for Business Use)
+## Note on Commercial Use
 
-For commercial use, enterprise deployments, or proprietary applications, 
-a separate commercial license is required.
+This software is free under the MIT License for educational, research, and 
+non-commercial purposes. 
 
-**Commercial License includes:**
-- ✅ Use in commercial products and services
-- ✅ Proprietary modifications without attribution
-- ✅ Priority support and customization
-- ✅ No open-source distribution requirements
+For commercial use (business applications, SaaS products, proprietary software), 
+please see [LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md) or contact:
 
-**Contact for Commercial Licensing:**
-- 📧 Email: lavyadamania@gmail.com
-- 💼 LinkedIn: https://www.linkedin.com/in/lavya-damania-6778472a7/
-- 📸 Instagram: https://www.instagram.com/lavya_damania_/
-- 🐙 GitHub: https://github.com/lavyadamania
-
----
-
-## Quick Reference
-
-| Use Case | License Required |
-|----------|------------------|
-| Academic research | MIT (Free) |
-| Student projects | MIT (Free) |
-| Open source projects | MIT (Free) |
-| Personal learning | MIT (Free) |
-| **Commercial SaaS** | **Commercial (Paid)** |
-| **Enterprise deployment** | **Commercial (Paid)** |
-| **Proprietary products** | **Commercial (Paid)** |
-| **Consulting services** | **Commercial (Paid)** |
-
----
-
-**Default:** If you're unsure, assume you need the commercial license for any business use.
-
-**Questions?** Contact: lavyadamania@gmail.com (update with your actual email)
+📧 Email: lavyadamania@gmail.com
+💼 LinkedIn: https://www.linkedin.com/in/lavya-damania-6778472a7/
+📸 Instagram: https://www.instagram.com/lavya_damania_/
